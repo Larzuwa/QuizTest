@@ -2,36 +2,22 @@
 <html>
 <head>
     <title>Quiz</title>
+    <script src="quiz.js" defer></script>
 </head>
 <body>
     <h1>Online Quiz</h1>
-    <div id="quiz-section">
-        <p>What is \(e=mc^{2}\) an equation for?</p>
-        <input type="radio" name="answer" value="Wrong"> Gravity<br>
-        <input type="radio" name="answer" value="Correct"> Energy-Mass equivalence<br>
-        <input type="radio" name="answer" value="Wrong"> Quantum mechanics<br>
-    </div>
+    <form id="quiz-section">
+        <!-- First Question -->
+        <p>1. What is the primary function of Remote Desktop Services?</p>
+        <input type="radio" name="question1" value="A"> A) File sharing service<br>
+        <input type="radio" name="question1" value="B"> B) Provides remote access to server applications<br>
+        <input type="radio" name="question1" value="C"> C) Email server<br>
+        <input type="radio" name="question1" value="D"> D) Online gaming service<br>
+
+        <!-- ... Add more questions following the same structure ... -->
+
+    </form>
     <button onclick="checkAnswer()">Submit</button>
     <div id="result"></div>
-
-    <script>
-    async function checkAnswer() {
-        let answers = document.getElementsByName('answer');
-        for (let i = 0; i < answers.length; i++) {
-          if (answers[i].checked && answers[i].value === 'Correct') {
-            let username = prompt("You've got it right! Enter your name for the rankings:");
-            const response = await fetch('/.netlify/functions/saveRanking', {
-              method: 'POST',
-              body: JSON.stringify({ name: username, score: 1 })
-            });
-            const updatedRankings = await response.json();
-            updateRankings(updatedRankings);
-            return;
-          }
-        }
-        document.getElementById('result').innerText = "Wrong Answer!";
-      }
-    </script>
-
 </body>
 </html>
