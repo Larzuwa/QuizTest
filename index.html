@@ -14,21 +14,6 @@
     <button onclick="checkAnswer()">Submit</button>
     <div id="result"></div>
 
-    <!---- BASIC SCRIPT 
-        <script>
-        function checkAnswer() {
-            let answers = document.getElementsByName('answer');
-            for (let i = 0; i < answers.length; i++) {
-                if (answers[i].checked && answers[i].value === 'Correct') {
-                    document.getElementById('result').innerText = "Correct Answer!";
-                    return;
-                }
-            }
-            document.getElementById('result').innerText = "Wrong Answer!";
-        }
-    </script>
-    END BASIC SCRIPT -->
-
     async function checkAnswer() {
         let answers = document.getElementsByName('answer');
         for (let i = 0; i < answers.length; i++) {
@@ -45,6 +30,6 @@
         }
         document.getElementById('result').innerText = "Wrong Answer!";
       }
-      
+
 </body>
 </html>
