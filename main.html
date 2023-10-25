@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Online Quiz</h1>
+    <div id="quiz-section">
+        <p>What is \(e=mc^{2}\) an equation for?</p>
+        <input type="radio" name="answer" value="Wrong"> Gravity<br>
+        <input type="radio" name="answer" value="Correct"> Energy-Mass equivalence<br>
+        <input type="radio" name="answer" value="Wrong"> Quantum mechanics<br>
+    </div>
+    <button onclick="checkAnswer()">Submit</button>
+    <div id="result"></div>
+
+    <script>
+        function checkAnswer() {
+            let answers = document.getElementsByName('answer');
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i].checked && answers[i].value === 'Correct') {
+                    document.getElementById('result').innerText = "Correct Answer!";
+                    return;
+                }
+            }
+            document.getElementById('result').innerText = "Wrong Answer!";
+        }
+    </script>
+</body>
+</html>
