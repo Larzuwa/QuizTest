@@ -14,6 +14,7 @@
     <button onclick="checkAnswer()">Submit</button>
     <div id="result"></div>
 
+    <script>
     async function checkAnswer() {
         let answers = document.getElementsByName('answer');
         for (let i = 0; i < answers.length; i++) {
@@ -30,6 +31,7 @@
         }
         document.getElementById('result').innerText = "Wrong Answer!";
       }
+    </script>
 
 </body>
 </html>
