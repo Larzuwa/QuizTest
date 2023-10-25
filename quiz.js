@@ -1,6 +1,16 @@
 async function checkAnswer() {
     let correctAnswers = {
         'question1': 'B',
+        'question2': 'B',
+        'question3': 'C',
+        'question4': 'C',
+        'question5': 'C',
+        'question6': 'C',
+        'question7': 'C',
+        'question8': 'B',
+        'question9': 'B',
+        'question10': 'B',
+        'question11': 'B',
         // ... Add correct answers for more questions here ...
     };
     let score = 0;
